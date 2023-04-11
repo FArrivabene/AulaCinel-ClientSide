@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <style>
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
   td {
     text-align: center;
     border: 1px solid;
@@ -17,28 +21,42 @@
 
 <body>
   <center>
-    <img class="imagem" src="https://picsum.photos/300/300">
+    <img class="imagem" src="https://picsum.photos/300/300"> <!-- Gerar uma iamgem aleatória -->
     <br>
-    <p>Autor: Fabio Arrivabene</p>
+    <p>Autor:
+    <h2>Fabio Arrivabene</h2>
+    </p>
     <a target="_blank" href="https://www.google.com/?hl=pt_PT">Clique aqui</a>
+    <br>
 
-    <table style="width: 400px;">
+    <table style="width: 400px; border: 4px solid;">
+      <!-- Aqui começa a tabela -->
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Participação</th>
+          <th>Conhecimentos</th>
+        </tr>
+      </thead>
       <tr>
-        <td>A1</td>
-        <td>B1</td>
-        <td>C1</td>
+        <!-- Aqui esta a primeira linha -->
+        <td>Fabio</td>
+        <td>15</td>
+        <td>12</td>
       </tr>
 
       <tr>
-        <td>A1</td>
-        <td>B1</td>
-        <td>C1</td>
+        <!-- Aqui esta a segunda linha -->
+        <td>Tobias</td>
+        <td>12</td>
+        <td>15</td>
       </tr>
 
       <tr>
-        <td>A1</td>
-        <td>B1</td>
-        <td>C1</td>
+        <!-- Aqui esta a terceira linha -->
+        <td>Jacinto</td>
+        <td>20</td>
+        <td>20</td>
       </tr>
     </table>
   </center>

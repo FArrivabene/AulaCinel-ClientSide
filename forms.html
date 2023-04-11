@@ -32,14 +32,14 @@
       <h2>Formulário Preenchimento COVID-19</h2>
       <form action="">
         <label for="Nutente">Número utente:</label><br>
-        <input type="text" id="Nutente" name="Nutente"><br><br>
+        <input type="number" id="Nutente" name="Nutente" min="10000000" max="999999999" required><br><br>
         <label for="Lname">Nome completo:</label><br>
-        <input type="text" id="LNome"><br><br>
+        <input type="text" id="LNome" minlength="5" required><br><br>
         <label for="LData">Data de nascimento:</label><br>
         <input type="date" id="Data"><br><br>
         <label for="LPergunta">Já foi diagnosticado com COVID ?</label><br>
-        <input type="radio" name="teste" value="sim" /> Sim
-        <input type="radio" name="teste" value="nao" /> Não<br><br>
+        <input type="radio" name="teste" value="sim" /> Sim </input>
+        <input type="radio" name="teste" value="nao" /> Não </input><br><br>
 
         <!-- Button submit -->
         <input type="submit" value="Enviar">

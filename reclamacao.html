@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt_PT">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livro de Reclamações</title>
+</head>
+<style>
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  #caixa-reclamação {
+    width: 350px;
+    height: 100px;
+  }
+
+  img {
+    width: 30%;
+    height: 30%;
+  }
+</style>
+
+<body>
+  <center>
+    <div style="border: 1px solid; padding: 20px; width: 600px;">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0525/1910/8762/products/impressos-modulo-de-25-reclamacoes-livro-de-reclamacoes-eletronico-6004884-0_1024x1024.png?v=1620844819"
+        alt="">
+
+      <h1>Dados do Consumidor</h1>
+      <form action="">
+        <label for="Lname">Nome completo: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+          Data de Nascimento:</label><br>
+        <input type="text" id="LNome" minlength="5" required placeholder="Digite seu nome"> <input type="date"
+          id="Data"><br><br>
+        <label for="Lname">Nome da emepresa:</label><br>
+        <input type="text" id="LNomeEmp" minlength="5" required placeholder="Digite o nome da empresa"><br><br>
+        <label for="LData">Data do ocorrido:</label><br>
+        <input type="date" id="Data"><br><br>
+        <label for="LPergunta">Primeira reclamação sobre esta empresa?</label><br>
+        <input type="radio" name="teste" value="sim" /> Sim </input>
+        <input type="radio" name="teste" value="nao" /> Não </input><br><br>
+        <label for="LRecl">Digite aqui sua reclamação:</label><br>
+        <!--<input type="text" id="caixa-reclamação" maxlength="100" required><br><br> -->
+        <textarea name="caixa-reclamação" id="" cols="70" rows="10" style="resize: none;" maxlength="200"
+          placeholder="Digite aqui a reclamação"></textarea><br>
+        <!-- Button submit -->
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+      </form>
+    </div>
+  </center>
+</body>
+
+</html>

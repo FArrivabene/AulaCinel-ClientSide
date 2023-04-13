@@ -16,35 +16,65 @@
       font-size: 10px;
     }
 
-    div {
-      border: 1px solid;
+    input {
+      border: 1px solid green;
+      outline: none;
+      text-align: center;
+      padding: 5px;
+      font-size: 15px;
+    }
+
+    input.submit {
+      background: green;
+      width: 200px;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      font-weight: 600;
+    }
+
+    input.submit:hover {
+      cursor: pointer;
+      background-color: rgb(0, 63, 0);
+    }
+
+    .div1 {
+      border: 3px solid green;
       padding: 10px;
       width: 50%;
+    }
+
+    .linha-verde {
+      border: 2px solid green;
     }
   </style>
 </head>
 
 <body>
   <center>
-    <div>
-      <img style="width: 30% ; height: 30%;" src="https://jf-vfxira.pt/wp-content/uploads/2016/10/SNS-1-1200x565.jpg"
-        alt="">
-      <h2>Formulário Preenchimento COVID-19</h2>
-      <form action="">
-        <label for="Nutente">Número utente:</label><br>
-        <input type="number" id="Nutente" name="Nutente" min="10000000" max="999999999" required><br><br>
-        <label for="Lname">Nome completo:</label><br>
-        <input type="text" id="LNome" minlength="5" required><br><br>
-        <label for="LData">Data de nascimento:</label><br>
-        <input type="date" id="Data"><br><br>
-        <label for="LPergunta">Já foi diagnosticado com COVID ?</label><br>
-        <input type="radio" name="teste" value="sim" /> Sim </input>
-        <input type="radio" name="teste" value="nao" /> Não </input><br><br>
+    <div class="div1">
+      <div class="div2">
+        <img style="width: 30% ; height: 30%;" src="https://jf-vfxira.pt/wp-content/uploads/2016/10/SNS-1-1200x565.jpg"
+          alt="">
+        <div class="linha-verde"></div>
+        <h2>Formulário Preenchimento COVID-19</h2>
+        <form action="">
+          <label for="Nutente">Número utente:</label><br>
+          <input type="number" id="Nutente" name="Nutente" min="10000000" max="999999999" required><br><br>
+          <label for="Lname">Nome completo:</label><br>
+          <input type="text" id="LNome" minlength="5" required><br><br>
+          <label for="LData">Data de nascimento:</label><br>
+          <input type="date" id="Data"><br><br>
+          <label for="LPergunta">Já foi diagnosticado com COVID ?</label><br>
+          <input type="radio" name="teste" value="sim" /> Sim </input>
+          <input type="radio" name="teste" value="nao" /> Não </input><br><br>
 
-        <!-- Button submit -->
-        <input type="submit" value="Enviar">
-      </form>
-      <p>by: Fábio Arrivabene</p>
+          <div class="linha-verde"></div><br><br>
+          <!-- Button submit -->
+          <input class="submit" type="submit" value="Enviar">
+        </form>
+        <p>by: Fábio Arrivabene</p>
+      </div>
     </div>
   </center>
 </body>

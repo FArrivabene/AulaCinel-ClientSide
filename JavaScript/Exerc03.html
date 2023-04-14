@@ -27,6 +27,14 @@
 
       document.getElementById('resultado').innerHTML = '<br>Maior valor: ' + maior + '<br>Menor valor: ' + menor;
     }
+
+    function limparValores() {
+      document.getElementById('valor1').value = '';
+      document.getElementById('valor2').value = '';
+      document.getElementById('valor3').value = '';
+      document.getElementById('valor4').value = '';
+      document.getElementById('resultado').innerHTML = '';
+    }
   </script>
 
   <center>
@@ -60,7 +68,7 @@
       <div id="resultado"></div>
     </fieldset>
 
-    <button id="limpar" style="width: 350px;">LIMPAR</button>
+    <button onclick="limparValores()" id="limpar" style="width: 350px;">LIMPAR</button>
 
   </center>
 </body>

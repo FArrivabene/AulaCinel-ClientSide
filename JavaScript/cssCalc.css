@@ -3,9 +3,17 @@
   padding: 0;
 }
 
+legend {
+  text-transform: uppercase;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: linear-gradient(to right, cyan, rgb(81, 0, 173));
+}
+
 h1 {
   color: white;
-  margin-top: 20px;
 }
 
 fieldset {
@@ -86,6 +94,41 @@ button:hover {
   color: dodgerblue;
 }
 
+div.botoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#somar {
+  background-image: url(../Imagens/adicionar-100.png);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+#subtrair {
+  background-image: url(../Imagens/subtração-100.png);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+#dividir {
+  background-image: url(../Imagens/dividisão-100.png);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+#multiplicar {
+  background-image: url(../Imagens/multiplicação-100.png);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+/* Botão LIMPAR */
 #limpar {
   background-color: lightcoral;
   font-weight: 700;
@@ -93,4 +136,5 @@ button:hover {
 
 #limpar:hover {
   background-color: rgb(233, 84, 84);
+  color: white;
 }

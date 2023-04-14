@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cssCalc.css">
+  <title>CALCULADORA | CET78</title>
+</head>
+
+<body>
+  <script>
+    function somar() {
+      var valor1 = parseInt(document.getElementById('valor1').value);
+      var valor2 = parseInt(document.getElementById('valor2').value);
+      var resultado = valor1 + valor2;
+
+      document.getElementById('resultado').innerHTML = '<br>A SOMA é igaul: ' + resultado;
+
+      if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3) || isNaN(valor4)) {
+        document.getElementById('resultado').innerHTML = '<br>Por favor, insira todos os valores.';
+        return;
+      }
+    }
+
+    function subtrair() {
+      var valor1 = parseInt(document.getElementById('valor1').value);
+      var valor2 = parseInt(document.getElementById('valor2').value);
+      var resultado = valor1 - valor2;
+
+      document.getElementById('resultado').innerHTML = '<br>A SUBTRAÇÃO é igaul: ' + resultado;
+
+      if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3) || isNaN(valor4)) {
+        document.getElementById('resultado').innerHTML = '<br>Por favor, insira todos os valores.';
+        return;
+      }
+    }
+
+    function dividir() {
+      var valor1 = parseInt(document.getElementById('valor1').value);
+      var valor2 = parseInt(document.getElementById('valor2').value);
+      var resultado = valor1 / valor2;
+
+      // Verificar se o divisor é diferente de zero
+      if (valor2 !== 0) {
+        var resultado = valor1 / valor2;
+        document.getElementById('resultado').innerHTML = '<br>A DIVISÃO é igaul: ' + resultado;
+      } else {
+        alert("Não é possível dividir por zero!")
+        document.getElementById("resultado").innerHTML = "<br>Não é possível dividir por zero.";
+      }
+
+      if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3) || isNaN(valor4)) {
+        document.getElementById('resultado').innerHTML = '<br>Por favor, insira todos os valores.';
+        return;
+      }
+    }
+
+    function multiplicar() {
+      var valor1 = parseInt(document.getElementById('valor1').value);
+      var valor2 = parseInt(document.getElementById('valor2').value);
+      var resultado = valor1 * valor2;
+
+      document.getElementById('resultado').innerHTML = '<br>A MULTIPLICAÇÃO é igaul: ' + resultado;
+
+      if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3) || isNaN(valor4)) {
+        document.getElementById('resultado').innerHTML = '<br>Por favor, insira todos os valores.';
+        return;
+      }
+    }
+
+    function limparValores() {
+      document.getElementById('valor1').value = '';
+      document.getElementById('valor2').value = '';
+      document.getElementById('resultado').innerHTML = '';
+    }
+  </script>
+
+  <center>
+    <h1>Calculadora | Fabio Arrivabene</h1>
+    <br><br>
+    <fieldset>
+      <legend>Calculadora JavaScript</legend>
+      <br>
+      <div class="innput-box">
+        <input type="number" id="valor1" class="innput-user" required><br>
+        <label class="label-inpput">Número 1</label>
+      </div>
+      <br><br>
+      <div class="innput-box">
+        <input type="number" id="valor2" class="innput-user" required><br>
+        <label class="label-inpput">Número 2</label>
+      </div>
+      <br>
+
+      <div class="botoes">
+        <button onclick="somar()" id="somar"></button>
+        <button onclick="subtrair()" id="subtrair"></button>
+        <button onclick="dividir()" id="dividir"></button>
+        <button onclick="multiplicar()" id="multiplicar"></button>
+      </div>
+
+      <div id="resultado"></div>
+    </fieldset>
+
+    <button onclick="limparValores()" id="limpar" style="width: 350px;">LIMPAR</button>
+  </center>
+</body>
+
+</html>

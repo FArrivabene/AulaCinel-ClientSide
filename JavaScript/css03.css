@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: white;
+  margin-top: 20px;
+}
+
+fieldset {
+  border: 3px solid dodgerblue;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  width: 400px;
+  text-align: center;
+}
+
+input {
+  border-radius: 8px;
+  text-align: center;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: linear-gradient(to right, rgb(29, 164, 243), rgb(8, 48, 65));
+}
+
+legend {
+  border: 1px solid dodgerblue;
+  padding: 10px;
+  background-color: dodgerblue;
+  border-radius: 8px;
+}
+
+button {
+  background-color: dodgerblue;
+  border: none;
+  margin-top: 20px;
+  padding: 15px;
+  width: 70%;
+  border-radius: 10px;
+  color: white;
+}
+
+label {
+  margin-left: 160px;
+}
+
+button:hover {
+  background-color: aquamarine;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.innput-box {
+  position: relative;
+}
+
+.innput-user {
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+.label-inpput {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  transition: .8s;
+}
+
+.innput-user:focus~.label-inpput,
+.innput-user:valid~.label-inpput {
+  top: -20px;
+  font-size: 15px;
+  color: dodgerblue;
+}
+
+#limpar {
+  background-color: lightcoral;
+  font-weight: 700;
+}
+
+#limpar:hover {
+  background-color: rgb(233, 84, 84);
+}

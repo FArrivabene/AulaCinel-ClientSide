@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exerc 02 | Fabio Arrivabene</title>
+  <style>
+    h1,
+    h2 {
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var valor1 = prompt("Digite o valor 1: ");
+    var valor2 = prompt("Digite o valor 2: ");
+
+    valor1 = parseInt(valor1);
+    valor2 = parseInt(valor2);
+
+    if (isNaN(valor1) || isNaN(valor2) || valor2 === 0 || valor2 === 0) {
+      document.writeln("<h1>Os números são inválidos!</h1>")
+    }
+    else {
+      document.writeln("<h2>" + "A soma dos valores " + valor1 + " e " + valor2 + " é igual a " + (valor1 + valor2) + ".");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 01 | Fabio Arrivabene</title>
+</head>
+
+<body>
+  <script>
+    // 
+  </script>
+
+  <p>Clique para exibir.</p>
+
+  <button onclick="clicarIdade()">Clique aqui</button>
+
+  <p id="paragrafo"></p>
+
+  <script>
+    function clicarIdade() {
+      var x;
+      var idade = prompt("Digite sua idade:");
+
+      if (idade != null) {
+        x = "Idade: " + idade + " anos.";
+        document.getElementById("paragrafo").innerHTML = x;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

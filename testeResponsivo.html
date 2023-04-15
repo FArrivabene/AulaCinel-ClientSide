@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/cssRespo.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>&lt; CALCULADORA BÁSICA &gt;</h1>
+  <div class="calculator">
+    <div id="container">
+      <label for="valor1">Valor 1:</label>
+      <input type="number" id="input1">
+      <br>
+      <label for="valor2">Valor 2:</label>
+      <input type="number" id="input2">
+      <br><br>
+      <div class="botoes">
+        <button onclick="sum()">Somar</button>
+        <button onclick="subtract()">Subtrair</button>
+      </div>
+      <div class="botoes">
+        <button onclick="multiply()">Multiplicar</button>
+        <button onclick="divide()">Dividir</button>
+      </div>
+      <h2 id="result"></h2>
+    </div>
+  </div>
+
+  <script>
+    // Função para somar os valores
+    function sum() {
+      var input1 = parseFloat(document.getElementById('input1').value);
+      var input2 = parseFloat(document.getElementById('input2').value);
+      var result = input1 + input2;
+      document.getElementById('result').innerText = 'Resultado: ' + result;
+    }
+
+    // Função para subtrair os valores
+    function subtract() {
+      var input1 = parseFloat(document.getElementById('input1').value);
+      var input2 = parseFloat(document.getElementById('input2').value);
+      var result = input1 - input2;
+      document.getElementById('result').innerText = 'Resultado: ' + result;
+    }
+
+    // Função para multiplicar os valores
+    function multiply() {
+      var input1 = parseFloat(document.getElementById('input1').value);
+      var input2 = parseFloat(document.getElementById('input2').value);
+      var result = input1 * input2;
+      document.getElementById('result').innerText = 'Resultado: ' + result;
+    }
+
+    // Função para dividir os valores
+    function divide() {
+      var input1 = parseFloat(document.getElementById('input1').value);
+      var input2 = parseFloat(document.getElementById('input2').value);
+      var result = input1 / input2;
+      document.getElementById('result').innerText = 'Resultado: ' + result;
+    }
+  </script>
+</body>

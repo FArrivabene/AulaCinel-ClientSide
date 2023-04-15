@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cssCalc.css">
+  <link rel="stylesheet" href="../CSS/cssCalc.css">
   <title>CALCULADORA | CET78</title>
 </head>
 
 <body>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <script>
     function somar() {
       var valor1 = parseInt(document.getElementById('valor1').value);
@@ -75,7 +76,7 @@
       document.getElementById('valor2').value = '';
       document.getElementById('resultado').innerHTML = '';
     }
-  </script>
+  </script> -->
 
   <center>
     <h1>Calculadora | Fabio Arrivabene</h1>
@@ -95,10 +96,18 @@
       <br>
 
       <div class="botoes">
-        <button onclick="somar()" id="somar"></button>
-        <button onclick="subtrair()" id="subtrair"></button>
-        <button onclick="dividir()" id="dividir"></button>
-        <button onclick="multiplicar()" id="multiplicar"></button>
+        <button onclick="somar()" id="somar">
+          <i class="ph-thin ph-plus"></i>
+        </button>
+        <button onclick="subtrair()" id="subtrair">
+          <i class="ph-thin ph-minus"></i>
+        </button>
+        <button onclick="dividir()" id="dividir">
+          <i class="ph-thin ph-divide"></i>
+        </button>
+        <button onclick="multiplicar()" id="multiplicar">
+          <i class="ph-thin ph-x"></i>
+        </button>
       </div>
 
       <div id="resultado"></div>

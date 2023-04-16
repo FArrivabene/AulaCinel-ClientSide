@@ -136,3 +136,10 @@ div.botoes {
   background-color: rgb(233, 84, 84);
   color: white;
 }
+
+.check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 0;
+}

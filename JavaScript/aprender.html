@@ -15,6 +15,11 @@
       let valor2 = parseInt(document.getElementById('valor2').value);
       let resultado;
 
+      if (operacao === "") {
+        document.getElementById("resultado").innerHTML = "Por favor, selecione uma operação.";
+        return;
+      }
+
       switch (operacao) {
         case "soma":
           resultado = valor1 + valor2;
@@ -47,10 +52,17 @@
   <input type="number" id="valor1"><br>
   <label for="valor2">Valor 2:</label>
   <input type="number" id="valor2"><br><br>
-  <button onclick="calcular('soma')">Somar</button>
-  <button onclick="calcular('subtracao')">Subtrair</button>
-  <button onclick="calcular('multiplicacao')">Multiplicar</button>
-  <button onclick="calcular('divisao')">Dividir</button>
+
+  <select id="operacao">
+    <option value="">Selecione uma operação</option>
+    <option value="soma">SOMAR</option>
+    <option value="subtracao">SUBTRAIR</option>
+    <option value="multiplicacao">MULTIPLICAR</option>
+    <option value="divisao">DIVIDIR</option>
+  </select>
+
+  <button onclick="calcular(document.getElementById('operacao').value)" id="calcular">CALCULAR</button>
+
   <p id="resultado"></p>
 </body>
 

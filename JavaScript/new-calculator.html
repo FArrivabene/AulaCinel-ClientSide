@@ -6,121 +6,118 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/new-calculator.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <title>New Calculator | 2023</title>
 </head>
 
 <body>
   <center>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script>
-      const resultContainer = document.getElementById('resultado');
-      const inputElement1 = document.getElementById('valor1');
-      const inputElement2 = document.getElementById('valor2');
-      const resultLabel = '<br>Então a {label} é igual: ';
-
-      let valor1;
-      let valor2;
-
-      function updateValues() {
-        valor1 = parseInt(inputElement1.value);
-        valor2 = parseInt(inputElement2.value);
-      }
-
-      function validateNumbers() {
-        if (isNaN(valor1) || isNaN(valor2)) {
-          resultContainer.innerHTML = '<br>Por favor, insira todos os valores.';
-        }
-      }
-
-      function somar() {
-        updateValues();
-        var resultado = valor1 + valor2;
-
-        resultContainer.innerHTML = resultLabel.replace('{label}', 'soma') + resultado;
-
-        validateNumbers();
-      }
-
-      function subtrair() {
-        updateValues();
-        var resultado = valor1 - valor2;
-
-        resultContainer.innerHTML = resultLabel.replace('{label}', 'subtração') + resultado;
-
-        validateNumbers();
-      }
-
-      function dividir() {
-        updateValues();
-        var resultado = valor1 / valor2;
-
-        // Verificar se o divisor é diferente de zero
-        if (valor2 !== 0) {
-          var resultado = valor1 / valor2;
-          resultContainer.innerHTML = resultLabel.replace('{label}', 'divisão') + resultado;
-        } else {
-          alert("Não é possível dividir por zero!")
-          resultContainer.innerHTML = "<br>Não é possível dividir por zero.";
-        }
-
-        validateNumbers();
-      }
-
-      function multiplicar() {
-        updateValues();
-        var resultado = valor1 * valor2;
-
-        resultContainer.innerHTML = resultLabel.replace('{label}', 'multiplicação') + resultado;
-
-        validateNumbers();
-      }
-
-      function limparValores() {
-        inputElement1.value = '';
-        inputElement2.value = '';
-        document.getElementById('resultado').innerHTML = '';
-      }
-    </script>
-
-    <center>
-      <h1>Calculadora | Fabio Arrivabene</h1>
+    <h1>Calculadora | Fabio Arrivabene</h1>
+    <br><br>
+    <fieldset>
+      <legend>Calculadora JavaScript</legend>
+      <br>
+      <div class="innput-box">
+        <input type="number" id="valor1" class="innput-user" required><br>
+        <label class="label-inpput">Número 1</label>
+      </div>
       <br><br>
-      <fieldset>
-        <legend>Calculadora JavaScript</legend>
-        <br>
-        <div class="innput-box">
-          <input type="number" id="valor1" class="innput-user" required><br>
-          <label class="label-inpput">Número 1</label>
-        </div>
-        <br><br>
-        <div class="innput-box">
-          <input type="number" id="valor2" class="innput-user" required><br>
-          <label class="label-inpput">Número 2</label>
-        </div>
-        <br>
+      <div class="innput-box">
+        <input type="number" id="valor2" class="innput-user" required><br>
+        <label class="label-inpput">Número 2</label>
+      </div>
+      <br>
 
-        <div class="botoes">
-          <button onclick="somar()" id="somar">
-            <i class="ph-thin ph-plus"></i>
-          </button>
-          <button onclick="subtrair()" id="subtrair">
-            <i class="ph-thin ph-minus"></i>
-          </button>
-          <button onclick="dividir()" id="dividir">
-            <i class="ph-thin ph-divide"></i>
-          </button>
-          <button onclick="multiplicar()" id="multiplicar">
-            <i class="ph-thin ph-x"></i>
-          </button>
-        </div>
+      <div class="botoes">
+        <button onclick="somar()" id="somar">
+          <i class="ph-bold ph-plus"></i>
+        </button>
+        <button onclick="subtrair()" id="subtrair">
+          <i class="ph-bold ph-minus"></i>
+        </button>
+        <button onclick="dividir()" id="dividir">
+          <i class="ph-bold ph-divide"></i>
+        </button>
+        <button onclick="multiplicar()" id="multiplicar">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
 
-        <div id="resultado"></div>
-      </fieldset>
-
-      <button onclick="limparValores()" id="limpar" style="width: 350px;">LIMPAR</button>
-    </center>
+      <div id="resultado"></div>
+    </fieldset>
+    <button onclick="limparValores()" id="limpar" style="width: 350px;">
+      <i class="ph-bold ph-broom" style="font-size: 52px;"></i>
+    </button>
   </center>
 
+  <script>
+    const resultContainer = document.getElementById('resultado');
+    const inputElement1 = document.getElementById('valor1');
+    const inputElement2 = document.getElementById('valor2');
+    const resultLabel = '<br>Então a {label} é igual: ';
+
+    let valor1;
+    let valor2;
+
+    function updateValues() {
+      valor1 = parseInt(inputElement1.value);
+      valor2 = parseInt(inputElement2.value);
+    }
+
+    function validateNumbers() {
+      if (isNaN(valor1) || isNaN(valor2)) {
+        resultContainer.innerHTML = '<br>Por favor, insira todos os valores.';
+      }
+    }
+
+    function somar() {
+      updateValues();
+      let resultado = valor1 + valor2;
+
+      resultContainer.innerHTML = resultLabel.replace('{label}', 'soma') + resultado;
+
+      validateNumbers();
+    }
+
+    function subtrair() {
+      updateValues();
+      let resultado = valor1 - valor2;
+
+      resultContainer.innerHTML = resultLabel.replace('{label}', 'subtração') + resultado;
+
+      validateNumbers();
+    }
+
+    function multiplicar() {
+      updateValues();
+      let resultado = valor1 * valor2;
+
+      resultContainer.innerHTML = resultLabel.replace('{label}', 'multiplicação') + resultado;
+
+      validateNumbers();
+    }
+
+    function dividir() {
+      updateValues();
+      let resultado = valor1 / valor2;
+
+      // Verificar se o divisor é diferente de zero
+      if (valor2 !== 0) {
+        let resultado = valor1 / valor2;
+        resultContainer.innerHTML = resultLabel.replace('{label}', 'divisão') + resultado;
+      } else {
+        alert("Não é possível dividir por zero!")
+        resultContainer.innerHTML = "<br>Não é possível dividir por zero.";
+      }
+      validateNumbers();
+    }
+
+    function limparValores() {
+      inputElement1.value = '';
+      inputElement2.value = '';
+      document.getElementById('resultado').innerHTML = '';
+    }
+  </script>
 </body>
 
 </html>

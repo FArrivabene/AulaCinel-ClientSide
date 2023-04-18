@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ordenador de Números</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    let numeros = [];
+
+    function abrirModal() {
+      $('#myModal').modal('show');
+    }
+
+    function adicionarNumero() {
+      var numero = parseInt(document.getElementById("numero").value);
+      numeros.push(numero);
+      document.getElementById("numero").value = "";
+    }
+
+    function ordenarNumeros() {
+      numeros.sort(function (a, b) {
+        return a - b;
+      });
+
+      document.getElementById("resultado").innerHTML = "Números ordenados: " + numeros.join(", ");
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Ordenador de Números</h1>
+  <button onclick="abrirModal()">Adicionar Número</button>
+  <button onclick="ordenarNumeros()">Ordenar</button>
+  <br><br>
+  <p id="resultado"></p>
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar Número</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="number" id="numero" placeholder="Digite um número">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="adicionarNumero()">Adicionar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

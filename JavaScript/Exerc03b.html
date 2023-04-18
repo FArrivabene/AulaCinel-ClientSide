@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/exerc03b.css">
+  <title>Pedir 10 números | Fabio Arrivabene</title>
+</head>
+
+<body>
+  <h1>Ordenador de Números</h1>
+  <div class="botoes">
+    <button onclick="abrirModal()">Adicionar Número</button>
+    <button onclick="ordenarNumeros()">Ordenar</button>
+    <button onclick="limpar()">Limpar</button>
+    <br><br>
+    <p id="resultado"></p>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+      <h2>Adicionar Número</h2>
+      <input type="number" id="numero" placeholder="Digite um número">
+      <br>
+      <button onclick="adicionarNumero()">Adicionar</button>
+      <button onclick="sairModal()">Sair</button>
+    </div>
+  </div>
+
+  <script>
+    let numeros = [];
+
+    function abrirModal() {
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    function sairModal() {
+      let modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    function limpar() {
+      document.getElementById("resultado").innerHTML = "";
+      numeros = [];
+    }
+
+    function adicionarNumero() {
+      let numero = parseInt(document.getElementById("numero").value);
+      numeros.push(numero);
+      document.getElementById("numero").value = "";
+    }
+
+    function ordenarNumeros() {
+      numeros.sort(function (a, b) {
+        return a - b;
+      });
+
+      document.getElementById("resultado").innerHTML = "Números ordenados: " + numeros.join(", ");
+    }
+
+    window.onclick = function (event) {
+      let modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

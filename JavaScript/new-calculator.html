@@ -10,7 +10,7 @@
   <title>New Calculator | 2023</title>
 </head>
 
-<body>
+<body onload="exitPopup()">
   <center>
     <h1>Calculadora | Fabio Arrivabene</h1>
     <br><br>
@@ -48,6 +48,15 @@
     <button onclick="clearValue()" id="limpar" style="width: 350px;">
       <i class="ph-bold ph-broom" style="font-size: 52px;"></i>
     </button>
+
+
+    <div id="meuPopup" class="popup">
+      <div class="conteudo-popup">
+        <h2>Erro</h2>
+        <p id="mensagemErro"></p>
+        <button onclick="exitPopup()">Fechar</button>
+      </div>
+    </div>
   </center>
 
   <script>
@@ -65,6 +74,17 @@
     function updateValues() {
       value1 = parseInt(inputElement1.value);
       value2 = parseInt(inputElement2.value);
+    }
+
+    function showPopup(mensagem) {
+      var popup = document.getElementById('meuPopup');
+      document.getElementById('mensagemErro').innerText = mensagem;
+      popup.style.display = 'flex';
+    }
+
+    function exitPopup() {
+      var popup = document.getElementById('meuPopup');
+      popup.style.display = 'none';
     }
 
     // Validar para que nao seja null ou NaN
@@ -109,7 +129,7 @@
         let result = value1 / value2;
         resultContainer.innerHTML = resultLabel.replace('{label}', 'divisão') + result;
       } else {
-        alert("Não é possível dividir por zero!")
+        showPopup("Não é possível dividir por zero.");
         resultContainer.innerHTML = "<br>Não é possível dividir por zero.";
       }
       validateNumbers();

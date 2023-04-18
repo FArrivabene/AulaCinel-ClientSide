@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exemplo de Popup</title>
+  <style>
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .conteudo-popup {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .popup.aberto {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Exemplo de Popup</h1>
+  <button onclick="mostrarPopup()">Clique aqui para exibir o popup</button>
+
+  <div id="meuPopup" class="popup">
+    <div class="conteudo-popup">
+      <h2>Meu Popup</h2>
+      <p>Este é um exemplo de popup.</p>
+      <button onclick="fecharPopup()">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarPopup() {
+      var popup = document.getElementById('meuPopup');
+      popup.style.display = 'flex';
+    }
+
+    function fecharPopup() {
+      var popup = document.getElementById('meuPopup');
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

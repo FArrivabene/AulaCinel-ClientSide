@@ -12,11 +12,16 @@
 <body>
   <h1>Ordenador de Números</h1>
   <div class="botoes">
-    <button onclick="abrirModal2()">Quantidade de nºs</button>
-    <button onclick="abrirModal()">Adicionar Número</button>
+    <div>
+      <button onclick="abrirModal2()">Quantidade de nºs</button>
+    </div>
+    <div>
+      <button onclick="abrirModal()">Adicionar Número</button>
+    </div>
     <button onclick="ordenarNumeros()">Ordenar</button>
     <button onclick="limpar()">Limpar</button>
     <br><br>
+
     <p id="resultado"></p>
   </div>
 
@@ -43,6 +48,7 @@
   </div>
 
   <script>
+    // Declaro as variaveis para serem acessadas globais
     let numeros = [];
     let tamanhoArray;
 
@@ -88,6 +94,11 @@
     }
 
     function ordenarNumeros() {
+      if (numeros.length === 0) {
+        document.getElementById("resultado").innerHTML = "É necessário inserir no mínimo 2 valores.";
+        return;
+      }
+
       numeros.sort(function (a, b) {
         return a - b;
       });

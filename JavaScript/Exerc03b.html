@@ -76,11 +76,13 @@
       tamanhoArray = parseInt(document.getElementById("numero-elementos").value);
       //numeros = [];
       sairModal2();
+      document.getElementById("numero-elementos").value = "";
     }
 
     function limpar() {
       document.getElementById("resultado").innerHTML = "";
       numeros = [];
+      document.getElementById("contador").innerHTML = "";
       document.getElementById("resultado").innerHTML = "O Array foi limpo!";
     }
 

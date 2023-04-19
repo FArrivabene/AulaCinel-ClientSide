@@ -10,16 +10,16 @@
 </head>
 
 <body>
-  <h1>Ordenador de Números</h1>
+  <h1>ORDENAR OS NÚMEROS</h1>
   <div class="botoes">
     <div>
       <button onclick="abrirModal2()">Quantidade de nºs</button>
     </div>
     <div>
-      <button onclick="abrirModal()">Adicionar Número</button>
+      <button onclick="abrirModal()">Adicionar Números</button>
     </div>
     <button onclick="ordenarNumeros()">Ordenar</button>
-    <button onclick="limpar()">Limpar</button>
+    <button class="botao-limpar" onclick="limpar()">Limpar</button>
     <br><br>
     <p id="resultado"></p>
   </div>
@@ -32,18 +32,20 @@
       <br>
       <button onclick="adicionarNumero()">Adicionar</button>
       <button onclick="sairModal()">Sair</button><br>
-      <label id="contador"></label>
+      <label id="contador"></label><br>
+      <label id="limiteNum"></label>
     </div>
   </div>
 
   <div id="myModal-2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="document.getElementById('myModal-2').style.display='none'">&times;</span>
-      <h2>Quantidade de números</h2>
+      <h2>Quantos números?</h2>
       <input type="number" id="numero-elementos" placeholder="Digite um número">
       <br>
       <button onclick="qtdNumero()">Guardar</button>
-      <button onclick="sairModal2()">Sair</button>
+      <button onclick="sairModal2()">Sair</button><br>
+      <label id="validacao"></label>
     </div>
   </div>
 
@@ -75,21 +77,30 @@
     function qtdNumero() {
       tamanhoArray = parseInt(document.getElementById("numero-elementos").value);
       //numeros = [];
+      if (tamanhoArray < 2) {
+        document.getElementById("validacao").innerHTML = "Quantidade mínima (2) números!";
+        return;
+      }
       sairModal2();
       document.getElementById("numero-elementos").value = "";
     }
 
-    function limpar() {
-      document.getElementById("resultado").innerHTML = "";
-      numeros = [];
-      document.getElementById("contador").innerHTML = "";
-      document.getElementById("resultado").innerHTML = "O Array foi limpo!";
-    }
-
     function adicionarNumero() {
       let numero = parseInt(document.getElementById("numero").value);
+      // Valido a entrada
+      if (numero === '') {
+        alert("Por favor, digite um número.");
+        return;
+      }
+      if (isNaN(numero)) {
+        alert("Por favor, digite um valor numérico válido.");
+        return;
+      }
+
+      numero = parseInt(numero);
       if (numeros.length >= tamanhoArray) {
         alert("Você atingiu o limite de números permitidos.");
+        document.getElementById("limiteNum").innerHTML = "Limite máximo atingido!";
         return;
       }
       numeros.push(numero);
@@ -103,7 +114,6 @@
         document.getElementById("resultado").innerHTML = "É necessário inserir no mínimo 2 valores.";
         return;
       }
-
       numeros.sort(function (a, b) {
         return a - b;
       });
@@ -111,11 +121,13 @@
       document.getElementById("resultado").innerHTML = "Números ordenados: " + numeros.join(", ");
     }
 
-    window.onclick = function (event) {
-      let modal = document.getElementById("myModal");
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
+    function limpar() {
+      // document.getElementById("resultado").innerHTML = "";
+      // document.getElementById("contador").innerHTML = "";
+      // document.getElementById("numero").value = "";
+      // numeros = [];
+      // document.getElementById("resultado").innerHTML = "O Array foi limpo!";
+      window.location.reload();
     }
   </script>
 </body>

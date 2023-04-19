@@ -12,6 +12,7 @@
 <body>
   <h1>Ordenador de Números</h1>
   <div class="botoes">
+    <button onclick="abrirModal2()">Quantidade de nºs</button>
     <button onclick="abrirModal()">Adicionar Número</button>
     <button onclick="ordenarNumeros()">Ordenar</button>
     <button onclick="limpar()">Limpar</button>
@@ -30,17 +31,45 @@
     </div>
   </div>
 
+  <div id="myModal-2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('myModal-2').style.display='none'">&times;</span>
+      <h2>Quantidade de números</h2>
+      <input type="number" id="numero-elementos" placeholder="Digite um número">
+      <br>
+      <button onclick="qtdNumero()">Selecionar</button>
+      <button onclick="sairModal2()">Sair</button>
+    </div>
+  </div>
+
   <script>
     let numeros = [];
+    let tamanhoArray;
 
     function abrirModal() {
       let modal = document.getElementById("myModal");
       modal.style.display = "block";
     }
 
+    function abrirModal2() {
+      let modal = document.getElementById("myModal-2");
+      modal.style.display = "block";
+    }
+
     function sairModal() {
       let modal = document.getElementById("myModal");
       modal.style.display = "none";
+    }
+
+    function sairModal2() {
+      let modal = document.getElementById("myModal-2");
+      modal.style.display = "none";
+    }
+
+    function qtdNumero() {
+      tamanhoArray = parseInt(document.getElementById("numero-elementos").value);
+      numeros = [];
+      sairModal2();
     }
 
     function limpar() {
@@ -50,6 +79,10 @@
 
     function adicionarNumero() {
       let numero = parseInt(document.getElementById("numero").value);
+      if (numeros.length >= tamanhoArray) {
+        alert("Você atingiu o limite de números permitidos.");
+        return;
+      }
       numeros.push(numero);
       document.getElementById("numero").value = "";
     }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Exerc Prático | Fabio Arrivabene</title>
+</head>
+
+<body>
+  <div class="center">
+    <h1>CET78 - FABIO ARRIVABENE</h1>
+    <br><br>
+    <fieldset>
+      <legend><b>Insira 3 valores abaixo</b></legend>
+      <br>
+      <div class="innput-box">
+        <input type="number" id="valor1" class="innput-user" required><br>
+        <label class="label-inpput">Disciplina 1</label>
+      </div>
+      <br><br>
+      <div class="innput-box">
+        <input type="number" id="valor2" class="innput-user" required><br>
+        <label class="label-inpput">Disciplina 2</label>
+      </div>
+      <br><br>
+      <div class="innput-box">
+        <input type="number" id="valor3" class="innput-user" required><br>
+        <label class="label-inpput">Disciplina 3</label>
+      </div>
+      <br>
+
+      <button onclick="calcularMedia()">Calcular</button>
+      <br><br>
+      <div class="resultado" id="resultado"></div>
+    </fieldset>
+
+    <button onclick="limparValores()" id="limpar" style="width: 350px;">LIMPAR</button>
+
+  </div>
+
+  <script>
+    function validarNota(nota) {
+      return nota >= 0 && nota <= 20;
+    }
+
+    function validarNotas() {
+      let mat1 = parseFloat(document.getElementById("valor1").value);
+      let mat2 = parseFloat(document.getElementById("valor2").value);
+      let mat3 = parseFloat(document.getElementById("valor3").value);
+
+      // Validar se os valores das notas são numéricos
+      if (isNaN(mat1) || isNaN(mat2) || isNaN(mat3)) {
+        document.getElementById("resultado").innerHTML = "Por favor, digite valores numéricos válidos!";
+        return false; // Retorna false indicando que a validação falhou
+      }
+
+      // Validar que os valores das notas estejam entre 0 e 20
+      if (!validarNota(mat1) || !validarNota(mat2) || !validarNota(mat3)) {
+        document.getElementById("resultado").innerHTML = "Por favor, digite valores válidos entre 0 e 20.";
+        return false; // Retorna false indicando que a validação falhou
+      }
+      return true; // Retorna true indicando que a validação passou
+    }
+
+    //Calcular notas
+    function calcularMedia() {
+      if (!validarNotas()) {
+        return; // Retorna sem calcular a média caso a validação falhe
+      }
+
+      let mat1 = parseFloat(document.getElementById("valor1").value);
+      let mat2 = parseFloat(document.getElementById("valor2").value);
+      let mat3 = parseFloat(document.getElementById("valor3").value);
+
+      let media = parseFloat((mat1 + mat2 + mat3) / 3);
+      media = Math.round(media);
+
+      if (media <= 7) {
+        document.getElementById("resultado").innerHTML = "A sua média é: " + media + " = Reprovado";
+      }
+      else if (media > 7 && media <= 9) {
+        document.getElementById("resultado").innerHTML = "A sua média é: " + media + " = Prova Oral.";
+      }
+      else {
+        document.getElementById("resultado").innerHTML = "A sua média é: " + media + " = APROVADO.";
+      }
+    }
+
+    function limparValores() {
+      window.location.reload();
+    }
+  </script>
+</body>
+
+</html>

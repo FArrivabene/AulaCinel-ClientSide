@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <script>
+    let arrayNotas = [];
+
+    function criarCampoDeEntrada(i) {
+
+      var meuFieldset = document.getElementById('meuFieldset');
+      meuFieldset.style.display = 'block';
+
+      const inputContainer = document.createElement('div');
+      inputContainer.classList.add('input-box');
+
+      const label = document.createElement('label');
+      label.htmlFor = `valor${i}`;
+      label.classList.add('label-input');
+      label.textContent = `Disciplina ${i}`;
+
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.id = `valor${i}`;
+      input.classList.add('input-user');
+      input.required = true;
+
+      inputContainer.appendChild(label);
+      inputContainer.appendChild(input);
+
+      return inputContainer;
+    }
+
+    function criarCampos() {
+      const totalNumber = parseInt(document.getElementById("totalNumber").value);
+      const fieldset = document.querySelector('fieldset');
+      fieldset.innerHTML = ''; // Limpa o conteúdo anterior
+
+      for (let i = 1; i <= totalNumber; i++) {
+        const inputContainer = criarCampoDeEntrada(i);
+        fieldset.appendChild(inputContainer);
+      }
+    }
+
+    function calcularNumber() {
+      // const totalNumber = parseInt(document.getElementById("totalNumber").value);
+      // arrayNotas = []; // Limpa o array de notas
+      // for (let i = 1; i <= totalNumber; i++) {
+      //   let notasDisc = parseFloat(document.getElementById(`valor${i}`).value);
+      //   arrayNotas.push(notasDisc);
+      // }
+      // const resultado = document.getElementById("resultado");
+      // resultado.textContent = "Notas: " + arrayNotas.join(" - ");
+
+      // const somaNotas = arrayNotas.reduce((acumulador, valorAtual) => {
+      //   return acumulador + valorAtual;
+      // }, 0);
+
+      // resultado.textContent += " | Soma das Notas: " + somaNotas;
+
+      // let resultadoFinal;
+      // resultadoFinal = Math.round(somaNotas / totalNumber);
+
+      // if (resultadoFinal <= 7) {
+      //   document.getElementById("resultadoFinal1").innerHTML = "A sua média é: " + resultadoFinal + " = Reprovado";
+      // }
+      // else if (resultadoFinal > 7 && resultadoFinal <= 9) {
+      //   document.getElementById("resultadoFinal1").innerHTML = "A sua média é: " + resultadoFinal + " = Prova Oral.";
+      // }
+      // else {
+      //   document.getElementById("resultadoFinal1").innerHTML = "A sua média é: " + resultadoFinal + " = APROVADO.";
+      // }
+      const { value: totalNumber } = document.getElementById("totalNumber");
+      const arrayNotas = Array.from({ length: totalNumber }, (_, i) =>
+        parseFloat(document.getElementById(`valor${i + 1}`).value)
+      );
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = "Notas: " + arrayNotas.join(" - ");
+
+      const somaNotas = arrayNotas.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+
+      const resultadoFinal = Math.round(somaNotas / totalNumber);
+
+      document.getElementById("resultadoFinal1").innerHTML = `A sua média é: ${resultadoFinal} = ${resultadoFinal <= 7 ? "Reprovado" : resultadoFinal <= 9 ? "Prova Oral" : "APROVADO"}`;
+    }
+
+    function limparCampos() {
+      window.location.reload();
+    }
+  </script>
+</head>
+
+<body>
+  <div class="cabecalho">
+    <label for="totalNumber">Quantas notas deseja ler?</label>
+    <input type="number" id="totalNumber">
+  </div>
+  <div class="itens-botoes">
+    <div>
+      <button onclick="criarCampos()">Criar campos de entrada</button>
+    </div>
+    <div>
+      <button onclick="calcularNumber()">Calcular Média</button>
+    </div>
+    <div>
+      <button onclick="limparCampos()">Limpar Campos</button>
+    </div>
+  </div>
+
+  <fieldset id="meuFieldset">
+    <!-- Os campos de entrada e rótulos serão inseridos aqui -->
+  </fieldset>
+  <div class="resultado-final">
+    <h2 id="resultado"></h2>
+    <h1 id="resultadoFinal1"></h1>
+  </div>
+</body>
+
+</html>

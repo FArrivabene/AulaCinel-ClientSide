@@ -49,6 +49,7 @@ button {
   width: 70%;
   border-radius: 10px;
   color: white;
+  transition: transform 0.1s ease-in-out;
 }
 
 label {
@@ -60,6 +61,7 @@ button:hover {
   color: black;
   font-weight: 700;
   cursor: pointer;
+  transform: translateY(-4px);
 }
 
 .innput-box {

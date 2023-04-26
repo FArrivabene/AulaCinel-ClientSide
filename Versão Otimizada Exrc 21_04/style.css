@@ -52,6 +52,7 @@ button:hover {
 input {
   border-radius: 5px;
   outline: none;
+  text-align: center;
 }
 
 #totalNumber {

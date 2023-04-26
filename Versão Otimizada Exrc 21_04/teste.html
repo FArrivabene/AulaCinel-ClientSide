@@ -47,33 +47,6 @@
     }
 
     function calcularNumber() {
-      // const totalNumber = parseInt(document.getElementById("totalNumber").value);
-      // arrayNotas = []; // Limpa o array de notas
-      // for (let i = 1; i <= totalNumber; i++) {
-      //   let notasDisc = parseFloat(document.getElementById(`valor${i}`).value);
-      //   arrayNotas.push(notasDisc);
-      // }
-      // const resultado = document.getElementById("resultado");
-      // resultado.textContent = "Notas: " + arrayNotas.join(" - ");
-
-      // const somaNotas = arrayNotas.reduce((acumulador, valorAtual) => {
-      //   return acumulador + valorAtual;
-      // }, 0);
-
-      // resultado.textContent += " | Soma das Notas: " + somaNotas;
-
-      // let resultadoFinal;
-      // resultadoFinal = Math.round(somaNotas / totalNumber);
-
-      // if (resultadoFinal <= 7) {
-      //   document.getElementById("resultadoFinal1").innerHTML = "A sua média é: " + resultadoFinal + " = Reprovado";
-      // }
-      // else if (resultadoFinal > 7 && resultadoFinal <= 9) {
-      //   document.getElementById("resultadoFinal1").innerHTML = "A sua média é: " + resultadoFinal + " = Prova Oral.";
-      // }
-      // else {
-      //   document.getElementById("resultadoFinal1").innerHTML = "A sua média é: " + resultadoFinal + " = APROVADO.";
-      // }
       const { value: totalNumber } = document.getElementById("totalNumber");
       const arrayNotas = Array.from({ length: totalNumber }, (_, i) =>
         parseFloat(document.getElementById(`valor${i + 1}`).value)

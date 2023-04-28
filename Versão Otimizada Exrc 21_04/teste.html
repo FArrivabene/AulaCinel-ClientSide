@@ -5,8 +5,101 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 24px;
+    }
+
+    h1,
+    h2 {
+      color: white;
+    }
+
+    body {
+      background-image: linear-gradient(to right, rgb(0, 255, 170), rgb(0, 89, 255));
+    }
+
+    fieldset {
+      display: none;
+      margin: auto;
+      padding: 24px;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 10px;
+      background-image: linear-gradient(rgb(0, 255, 157),
+          rgb(0, 204, 255));
+      border: 2px solid;
+      box-shadow: 8px 8px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      padding: 4px;
+      border-radius: 10px;
+      transition: transform 0.1s ease-in-out;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    button.limpar {
+      background-color: rgb(255, 151, 151);
+    }
+
+    button.limpar:hover {
+      background-color: rgb(255, 68, 68);
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: rgba(0, 255, 255, 0.582);
+      font-weight: 500;
+      transform: translateY(-4px);
+    }
+
+    input {
+      border-radius: 5px;
+      outline: none;
+      text-align: center;
+    }
+
+    #totalNumber {
+      max-width: 50px;
+      display: flex;
+      margin: auto;
+      text-align: center;
+    }
+
+    .cabecalho {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .itens-botoes div {
+      display: flex;
+      flex-direction: column;
+      max-width: 200px;
+      margin: auto;
+      padding: 0px 24px 24px 24px;
+    }
+
+    .input-box input {
+      margin: 4px;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+    }
+
+    .resultado-final {
+      text-align: center;
+      padding: 16px;
+    }
+  </style>
   <script>
     let arrayNotas = [];
 

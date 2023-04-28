@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>LOGIN | ELETRO-FABIO</title>
+</head>
+
+<style>
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(15, 54, 71));
+  }
+</style>
+
+<script>
+  function validarLogin() {
+    let email = document.getElementById("email").value;
+
+    if (email === "" || email === null) {
+      $('#myModal').modal('show');
+      return false;
+    }
+  }
+
+  function formulaUser() {
+    window.location.href = "formulario.html";
+  }
+</script>
+
+<body>
+  <div class="dist-top">
+    <div class="paragraph">
+      <p>Realize o login para registrar a reclamação.</p>
+    </div>
+  </div>
+  <div class="tela-login">
+    <h1>Login</h1>
+    <form action="reclamacao.html" method="get">
+      <input class="login" type="email" id="email" name="email" placeholder="Email">
+      <br><br>
+
+      <input class="login" type="password" name="senha" placeholder="Digite a senha">
+      <br><br>
+
+      <input onclick="return validarLogin();" type="submit" name="submit" class="nova-classe" value="Entrar"><br><br>
+
+      <input type="button" onclick="formulaUser()" class="nova-classe2" value="Novo Usuário">
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Erro de validação</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Por favor, insira um email válido.</p>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

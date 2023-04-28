@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>FORMULÁRIO | NOVO USUÁRIO</title>
+</head>
+
+<script>
+  function nextRecla() {
+    window.location.href = "reclamacao.html";
+  }
+</script>
+
+<body class="form">
+  <a href="login.html">Voltar</a>
+  <div class="box">
+    <form action="formulario.php" method="POST">
+      <fieldset>
+        <legend><b>Formulário de Clientes</b></legend>
+        <br>
+        <div class="innput-box">
+          <input type="text" name="nome" id="nome" class="innput-user" required>
+          <label for="nome" class="label-inpput">Nome completo</label>
+        </div>
+        <br><br>
+        <div class="innput-box">
+          <input type="password" name="senha" id="senha" class="innput-user" required>
+          <label for="senha" class="label-inpput">Digite a senha</label>
+        </div>
+        <br><br>
+        <div class="innput-box">
+          <input type="email" name="email" id="email" class="innput-user" required>
+          <label for="email" class="label-inpput">E-mail</label>
+        </div>
+        <br><br>
+        <div class="innput-box">
+          <input type="tel" name="telefone" id="telefone" class="innput-user" required>
+          <label for="telefone" class="label-inpput">Telefone</label>
+        </div>
+        <br>
+
+        <p>Sexo:</p>
+        <input type="radio" id="feminino" name="genero" value="Feminino" required>
+        <label for="feminino">Feminino</label><br>
+        <input type="radio" id="masculino" name="genero" value="Masculino" required>
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="outro" name="genero" value="Outro" required>
+        <label for="outro">Outro</label>
+        <br><br>
+
+        <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+        <input type="date" name="data_nascimento" id="data_nascimento" required>
+        <br><br>
+
+        <div class="innput-box">
+          <input type="text" name="cidade" id="cidade" class="innput-user" required>
+          <label for="cidade" class="label-inpput">Cidade</label>
+        </div>
+        <br><br>
+        <div class="innput-box">
+          <input type="text" name="estado" id="estado" class="innput-user" required>
+          <label for="estado" class="label-inpput">Estado</label>
+        </div>
+        <br><br>
+        <div class="innput-box">
+          <input type="text" name="endereco" id="endereco" class="innput-user" required>
+          <label for="endereco" class="label-inpput">Endereço</label>
+        </div>
+        <br><br>
+
+        <input onclick="nextRecla()" type="submit" name="submit" id="submit" value="Registrar">
+
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>

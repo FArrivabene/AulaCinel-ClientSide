@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/style_05_01.css">
+  <title>Exercício Arrays</title>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <h1>DIGITE 10 NÚMEROS</h1>
+    </div>
+    <div>
+      <input type="number" id="valor">
+    </div>
+    <div>
+      <p id="numDigitado"></p>
+    </div>
+    <div>
+      <input onclick="salvarNum(arrayNum)" type="button" id="guardar" value="Guardar">
+    </div>
+    <div>
+      <input onclick="showNum(arrayNum)" type="button" id="calcular" value="Mostrar">
+    </div>
+    <div>
+      <input onclick="limpar()" type="button" id="limpar" value="Limpar">
+    </div>
+    <div>
+      <p id="showNum"></p>
+      <p id="maxNum"></p>
+      <p id="minNum"></p>
+    </div>
+  </div>
+</body>
+
+<script>
+  let arrayNum = [];
+  let cont = 0;
+
+  function salvarNum(arrayNum) {
+    cont++;
+    let numDigit = parseInt(document.getElementById("valor").value);
+    arrayNum.push(numDigit);
+    document.getElementById("valor").value = "";
+    document.getElementById("numDigitado").innerHTML += numDigit + (arrayNum.length === 10 ? "" : " - ");
+  }
+
+  function showNum(arrayNum) {
+    if (arrayNum.length < 10) {
+      alert("É preciso digitar 10 números");
+      return;
+    } else {
+      //let output = "";
+      let max = arrayNum[0];
+      let min = arrayNum[0];
+      for (let i = 0; i < arrayNum.length; i++) {
+        //output += arrayNum[i] + " - ";
+        if (arrayNum[i] > max) {
+          max = arrayNum[i];
+        }
+        if (arrayNum[i] < min) {
+          min = arrayNum[i];
+        }
+      }
+      //document.getElementById("showNum").innerHTML = output.slice(0, -2);
+      document.getElementById("maxNum").innerHTML = "O maior número é: " + max;
+      document.getElementById("minNum").innerHTML = "O menor número é: " + min;
+      return;
+    }
+  }
+
+  function limpar() {
+    window.location.reload();
+  }
+</script>
+
+</html>

@@ -47,6 +47,7 @@
     arrayNum.push(numDigit);
     document.getElementById("valor").value = "";
     document.getElementById("numDigitado").innerHTML += numDigit + (arrayNum.length === 10 ? "" : " - ");
+    document.getElementById("valor").focus();
   }
 
   function showNum(arrayNum) {

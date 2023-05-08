@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>LISTA DE TAREFAS 2023</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+    <form id="add-task-form">
+      <div>
+        <input type="text" id="task-title" placeholder="Título da tarefa">
+      </div>
+      <div>
+        <textarea id="task-description" placeholder="Descrição da tarefa"></textarea>
+      </div>
+      <div>
+        <button type="submit">Adicionar tarefa</button>
+      </div>
+    </form>
+    <ul id="task-list">
+      <!-- lista de tarefas será adicionada aqui -->
+    </ul>
+    <p id="pending-tasks">Tarefas pendentes: <span id="pending-tasks-count">0</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
